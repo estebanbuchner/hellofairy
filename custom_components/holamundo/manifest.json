@@ -1,0 +1,10 @@
+{
+  "domain": "hellofairy",
+  "name": "Luces de Navidad",
+  "version": "0.0.1",
+  "documentation": "https://github.com/estebanbuchner/hellofairy",
+  "dependencies": [],
+  "codeowners": ["@estebanbuchner"],
+  "requirements": [],
+  "config_flow": false
+}
