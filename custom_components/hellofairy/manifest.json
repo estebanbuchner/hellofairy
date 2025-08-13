@@ -1,11 +1,11 @@
-{
-  "domain": "hellofairy",
-  "name": "Luces de Navidad Hello Fairy BLE",
-  "version": "0.0.1",
-  "documentation": "https://github.com/estebanbuchner/hellofairy",
-  "codeowners": ["@estebanbuchner"],
-  "requirements": ["bleak==0.21.0"],
-  "iot_class": "local_polling",
-  "integration_type": "hub"}
-
-
+  {
+    "domain": "hellofairy",
+    "name": "Hello Fairy BLE (via ESPHome)",
+    "version": "0.1.0",
+    "documentation": "https://github.com/estebanbuchner/hellofairy",
+    "codeowners": ["@estebanbuchner"],
+    "requirements": [],
+    "iot_class": "cloud_push",
+    "integration_type": "hub"
+  }
+  
