@@ -1,18 +1,24 @@
 import logging
-from .const import DOMAIN
-
+from .const import DOMAIN, DEFAULT_MAC
+from .ble_controller import HelloFairyBLE
 
 _LOGGER = logging.getLogger(__name__)
 
-def setup(hass, config):
-    conf = config.get(DOMAIN)
-    valor = conf.get("dato")
+async def async_setup(hass, config):
+    """Inicializa la integración Hello Fairy BLE."""
+    conf = config.get(DOMAIN, {})
+    mac = conf.get("mac_address", DEFAULT_MAC)
 
-    hass.data[DOMAIN] = {
-        "dato": valor,
+    _LOGGER.info(f"[HelloFairy] MAC configurada: {mac}")
 
-    }
+    controller = HelloFairyBLE(mac)
+    hass.data[DOMAIN] = controller
+
+    await controller.connect()
+
+    if controller.is_connected():
+        _LOGGER.info(f"[HelloFairy] Conexión BLE exitosa con {mac}")
+    else:
+        _LOGGER.warning(f"[HelloFairy] No se pudo conectar a {mac}")
 
     return True
-
-
