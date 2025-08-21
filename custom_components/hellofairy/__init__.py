@@ -1,6 +1,6 @@
 import logging
 from .const import DOMAIN, DEFAULT_MAC
-from .ble_controller import HelloFairyBLE
+from .hello_fairy_ble import HelloFairyBLE
 
 _LOGGER = logging.getLogger(__name__)
 
