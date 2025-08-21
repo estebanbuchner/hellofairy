@@ -22,3 +22,7 @@ async def async_setup(hass, config):
         _LOGGER.warning(f"[HelloFairy] No se pudo conectar a {mac}")
 
     return True
+
+async def async_setup_entry(hass, entry, async_add_entities):
+    controller = hass.data[DOMAIN][entry.entry_id]
+    async_add_entities([HelloFairyConnectionSensor(controller)])
