@@ -13,3 +13,12 @@ class HelloFairyConnectionSensor(BinarySensorEntity):
     def is_on(self):
         return self._controller.is_connected()
 
+    @property
+    def device_info(self):
+        return {
+            "identifiers": {("hellofairy", "ble_controller")},
+            "name": "Hello Fairy BLE",
+            "manufacturer": "Hello Fairy",
+            "model": "BLE Controller",
+            "sw_version": "v0.1.5",
+        }
